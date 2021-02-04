@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  monero-pool-service:
+    container_name: monero-pool
+    build: .
+    volumes:
+      - ./data:/app/monero-pool/data
+    working_dir: /app
+    networks:
+      - monero-net
+    ports:
+      - 4242:4242
+      - 4243:4243
+      - 28081:28081
+networks:
+  monero-net:
